@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile.web
+        ports:
+            - 8080:80
+        volumes:
+            - "/home/vagrant/bgapp/web:/var/www/html:ro"
+        networks:
+            - app-network
+networks:
+    app-network:
